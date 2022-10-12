@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>World of Warcraft: Wrath of the Lich King</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="./css/general.css">
+        <link rel="stylesheet" href="./css/header.css">
+        <link rel="stylesheet" href="./css/features.css">
+        <link rel="stylesheet" href="./css/footer.css">
+        <link rel="stylesheet" href="./css/fun.css">
+    </head>
+
+    <body id="wotlk">
+
+        <nav class="main-nav">
+            <ul class="menu container">
+                <li>
+                    <a href="https://www.blizzard.com/en-us/" target="_blank">
+                        <img class="blizzard" src="./Pics/Blizzard.png" alt="blizzard logo">
+                    </a>
+                </li>
+                <li><a href="#game">Game</a></li>
+                <li><a href="#about-us">About us</a></li>
+                <li>
+                    <a href="#buy-now">Buy Now
+                        <img class="battlenet" src="./Pics/battlenet.png" alt="buy on battle net">
+                    </a>                  
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="content-wrapper">
+            <header>
+                <h1 class="wotlk container">
+                    <img class="wotlk" src="./Pics/logo2.png" alt="wotlk logo">    
+                </h1>
+            </header>
+
+            <main>
+
+                <section class="features container">
+                    
+                    <article id="game" class="feature">
+                        <figure>
+                            <a href="./Pics/map.jpg" target="_blank">
+                                <img src="./Pics/map.jpg" alt="screen" class="box rounded">
+                            </a>
+                        </figure>
+        
+                        <div class="content">
+                            <h2>Northrend</h2>
+                            <h3>Continent is all yours</h3>
+                            <p>Explore new zones and areas full of plague and mythic creatures!</p>
+                        </div>
+                    </article>
+        
+        
+                    <article class="feature">
+                        <figure>
+                            <a href="./Pics/DK.jpg" target="_blank">
+                                <img src="./Pics/DK.jpg" alt="screen" class="box rounded">
+                            </a>
+                        </figure>
+        
+                        <div class="content">
+                            <h2>Class</h2>
+                            <h3>Death Knight</h3>
+                            <p>Embrace the power of plague, death and blood and serve the Lich King!</p>
+                        </div>
+                    </article>
+        
+        
+                    <article class="feature">
+                        <figure>
+                            <a href="./Pics/ICC.jpg" target="_blank">
+                                <img src="./Pics/ICC.jpg" alt="screen" class="box rounded">
+                            </a>
+                        </figure>
+        
+                        <div class="content">
+                            <h2>Raids</h2>
+                            <h3>Complete them all</h3>
+                            <p>Conquer new zones, dungeons and raids and become the true Raid master!</p>
+                        </div>
+                    </article>
+        
+                    <article id="buy-now" class="feature button">
+                        <figure>
+                            <a href="https://wowclassic.blizzard.com/en-us/" class="buy" target="_blank">
+                                <button type="button">Buy Now</button>
+                            </a>
+                        </figure>
+                        
+                        <div class="content">
+                            <h3>Try it by yourself!</h3>
+                        </div>
+                        
+                    </article>
+                </section>
+        
+            </main>
+        
+        
+            <footer id="about-us" >
+                <div class="us container">
+        
+                    <form action="" class="footer-item Career">
+                        <h2>interested in working with us? <br>
+                            let us know!</h2>
+                            <a href="https://careers.blizzard.com/global/en/search-results" class="career" target="_blank">
+                                <button type="button">Job Openings</button>
+                            </a>
+                    </form>
+        
+                    <div class="footer-item download">
+                        <h2>Download the<br>
+                            battle.net</h2> 
+                        <a href="https://www.blizzard.com/en-us/apps/battle.net/desktop" target="_blank">
+                            <img src="./Pics/banner.png" class="bnet" alt="footer bnet">
+                        </a>
+                    </div>
+        
+                    <ul class="footer-item contact menu">
+                        <li><a href="https://www.blizzard.com/en-us/company/contact">contact</a></li>
+                        <li><a href="https://twitter.com/Warcraft">twitter</a></li>
+                        <li><a href="https://www.reddit.com/r/wow/">reddit</a></li> 
+                    </ul>
+        
+                    <div class="footer-item logos">
+                        <img src="./Pics/Blizzard.png" class="bliz" alt="footer bliz logo">
+                        <img src="./Pics/teen.png" class="esrb" alt="esrb logo">
+                        <img src="./Pics/ingame.png" class="ingame" alt="ingame transactions">
+                        <img src="./Pics/internet.png" class="internet" alt="internet required to play">
+                    </div>
+                    
+                </div>
+            </footer>  
+        </div>
+
+
+        <script>
+            const headerEl = document.querySelector('header')
+            const logoEl = document.querySelector('.wotlk img')
+
+
+            const setTranslate = (xPos, yPos, el) => {
+                el.style.transform = `translate3d(${xPos}, ${yPos}px, 0)`;
+            }
+
+            let xScrollPosition;
+            let yScrollPosition;
+
+            const scrollLoop = () => {
+                xScrollPosition = window.scrollX;
+                yScrollPosition = window.scrollY;
+
+                setTranslate(0, yScrollPosition * 0.75, headerEl);
+                setTranslate(0, yScrollPosition * -0.25, logoEl);
+
+                requestAnimationFrame(scrollLoop);
+            }
+
+            window.addEventListener('DOMContentLoaded', scrollLoop, false);
+        </script>
+
+        
+    </body>
+
+</html>
